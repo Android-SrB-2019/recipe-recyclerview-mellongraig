@@ -1,3 +1,10 @@
 <resources>
+    <!-- Name: Graig Mellon
+     Date: 3/22/2019 -->
     <string name="app_name">RecipeAssignment</string>
+    <string name="recipe_content">recipe_content</string>
+    <string name="app_name_2">Detailed Recipes</string>
+    <string name="action_settings">Settings</string>
+    <string name="ingredients">Ingredients</string>
+    <string name="directions">Directions</string>
 </resources>
