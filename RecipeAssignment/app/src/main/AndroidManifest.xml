@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Name: Graig Mellon
+     Date: 3/22/2019 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.graig.recipeassignment">
 
@@ -17,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".DetailRecipes"
-            android:label="Second Activity"
+            android:label="@string/app_name_2"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
