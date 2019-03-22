@@ -32,7 +32,7 @@ public class RecipeListAdapter extends RecyclerView.Adapter<RecipeListAdapter.Re
     @Override
     public RecipeListAdapter.RecipeViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View recipeView = LayoutInflater.from(parent.getContext()).inflate(R.layout.recipelist_item, parent, false);
-        return new RecipeViewHolder(recipeView);
+        return new RecipeViewHolder(recipeView, this);
     }
 
     /**
@@ -62,15 +62,19 @@ public class RecipeListAdapter extends RecyclerView.Adapter<RecipeListAdapter.Re
     class RecipeViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         public final TextView recipeItemView;
         public final TextView recipeDescriptionView;
+        public final RecipeListAdapter recipeAdapter;
 
         /**
          * This will initialize the text view in the Recipe view holder
-         * @param itemView
+         * @param itemView View
+         * @param adapter Recipe list adapter
          */
-        public RecipeViewHolder(View itemView){
+        public RecipeViewHolder(View itemView, RecipeListAdapter adapter){
             super(itemView);
             recipeItemView = itemView.findViewById(R.id.recipe_name);
             recipeDescriptionView = itemView.findViewById(R.id.recipe_description);
+            recipeAdapter = adapter;
+            itemView.setOnClickListener(this);
         }
 
         /**

@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private LinkedList<Recipe> mRecipeList = new LinkedList<>();
     private RecyclerView mRecyclerView;
     private RecipeListAdapter mRecipeAdapter;
+    private RecyclerView.LayoutManager mRecipeLayoutManager;
 
     /**
      * onCreate method
@@ -33,6 +35,10 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        mRecipeLayoutManager = new LinearLayoutManager(this);
+        DataProvider recipeProvider = new DataProvider();
+        mRecipeList = recipeProvider.getRecipes();
+
         // Get a handle to the RecyclerView.
         mRecyclerView = findViewById(R.id.recyclerview);
         // Create an adapter and supply the data to be displayed.
@@ -40,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         // Connect the adapter with the RecyclerView.
         mRecyclerView.setAdapter(mRecipeAdapter);
         // Give the RecyclerView a default layout manager.
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mRecyclerView.setLayoutManager(mRecipeLayoutManager);
     }
 
     /**
