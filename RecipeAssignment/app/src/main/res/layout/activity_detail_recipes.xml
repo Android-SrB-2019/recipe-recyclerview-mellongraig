@@ -51,7 +51,7 @@
                 android:textSize="18sp"
                 android:textStyle="normal"
                 android:textColor="#808080"
-                android:text="Ingredients"/>
+                android:text="@string/ingredients"/>
 
             <TextView
                 android:id="@+id/recipe_directions"
@@ -68,7 +68,7 @@
                 android:textSize="18sp"
                 android:textStyle="normal"
                 android:textColor="#808080"
-                android:text="Directions"/>
+                android:text="@string/directions"/>
         </LinearLayout>
 
     </ScrollView>
